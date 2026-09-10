@@ -1,6 +1,10 @@
-# React + TypeScript + Vite
+# Wavesurfer Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript + Vite app built around [wavesurfer.js](https://wavesurfer.xyz/).
+
+## License
+
+[MIT](LICENSE)
 
 Currently, two official plugins are available:
 
