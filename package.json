@@ -1,0 +1,41 @@
+{
+   "name": "wavesurfer-generator",
+   "private": true,
+   "version": "0.0.0",
+   "type": "module",
+   "scripts": {
+      "dev": "vite",
+      "build": "tsc -b && vite build",
+      "lint": "eslint .",
+      "typecheck": "tsc -b",
+      "test": "echo \"No test framework configured yet\" && exit 0",
+      "preview": "vite preview",
+      "prepare": "husky"
+   },
+   "dependencies": {
+      "@wavesurfer/react": "^1.0.12",
+      "react": "^19.2.8",
+      "react-dom": "^19.2.8",
+      "wavesurfer.js": "^7.12.11"
+   },
+   "devDependencies": {
+      "@commitlint/cli": "^21.2.2",
+      "@commitlint/config-conventional": "^21.2.2",
+      "@eslint/js": "^10.0.1",
+      "@types/node": "^24.13.3",
+      "@types/react": "^19.2.18",
+      "@types/react-dom": "^19.2.4",
+      "@vitejs/plugin-react": "^6.1.0",
+      "eslint": "^10.9.0",
+      "eslint-plugin-react-hooks": "^7.1.1",
+      "eslint-plugin-react-refresh": "^0.5.4",
+      "globals": "^17.11.0",
+      "husky": "^9.1.7",
+      "lint-staged": "^17.5.0",
+      "prettier": "^3.9.6",
+      "prettier-plugin-organize-imports": "^4.3.0",
+      "typescript": "~6.0.2",
+      "typescript-eslint": "^8.67.0",
+      "vite": "^8.2.2"
+   }
+}

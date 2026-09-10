@@ -1,0 +1,862 @@
+/* PROTOTYPE styles for all five variants + the switcher. Throwaway. */
+
+#root {
+   width: 100%;
+   max-width: none;
+   border-inline: none;
+   text-align: left;
+}
+body {
+   background: var(--bg);
+}
+
+.vp {
+   display: flex;
+   flex-direction: column;
+   height: 100svh;
+}
+.vp h1 {
+   font-size: 22px;
+   letter-spacing: -0.4px;
+   margin: 0;
+}
+.vp h1 b {
+   color: var(--accent);
+   font-weight: 600;
+}
+.vp h2 {
+   font-size: 22px;
+   margin: 0 0 4px;
+}
+.vp .tag {
+   font-size: 13px;
+   color: var(--text);
+   opacity: 0.85;
+}
+
+/* ---- shared controls ---- */
+.form-section {
+   border-bottom: 1px solid var(--border);
+}
+.form-section:last-child {
+   border-bottom: none;
+}
+.form-h h3 {
+   font-size: 12px;
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+   margin: 0;
+   padding: 8px 12px;
+   color: var(--text-h);
+   display: flex;
+   align-items: center;
+   gap: 6px;
+   cursor: default;
+}
+.form-h .caret {
+   font-size: 10px;
+   color: var(--text);
+}
+.frow {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 10px;
+   padding: 5px 12px;
+   font-size: 13px;
+}
+.frow:hover {
+   background: var(--code-bg);
+}
+.fname {
+   color: var(--text-h);
+   display: flex;
+   flex-direction: column;
+   line-height: 1.2;
+}
+.fname em {
+   font-style: normal;
+   font-size: 11px;
+   color: var(--text);
+   opacity: 0.7;
+}
+.fctl {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   flex: 1;
+   justify-content: flex-end;
+}
+input[type='color'] {
+   width: 34px;
+   height: 24px;
+   border: 1px solid var(--border);
+   border-radius: 5px;
+   padding: 1px;
+   background: none;
+   cursor: pointer;
+}
+input[type='range'] {
+   width: 100%;
+   min-width: 60px;
+   accent-color: var(--accent);
+}
+.fval {
+   font-size: 11px;
+   min-width: 34px;
+   text-align: right;
+   color: var(--text-h);
+}
+.frow--toggle .fctl {
+   justify-content: flex-end;
+}
+.frow--toggle input[type='checkbox'] {
+   width: 16px;
+   height: 16px;
+   accent-color: var(--accent);
+}
+.frow-hidden {
+   display: none;
+}
+.form--dense .frow {
+   padding: 3px 12px;
+}
+.flabel-long {
+   max-width: 150px;
+}
+
+/* ---- code panel ---- */
+.code-panel {
+   display: flex;
+   flex-direction: column;
+   min-height: 0;
+   height: 100%;
+}
+.code-bar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 8px;
+   padding: 8px 12px;
+   border-bottom: 1px solid var(--border);
+   background: var(--code-bg);
+}
+.code-title {
+   font-size: 12px;
+   text-transform: uppercase;
+   letter-spacing: 0.06em;
+   color: var(--text);
+}
+.copy {
+   font: inherit;
+   font-size: 12px;
+   padding: 4px 12px;
+   border-radius: 6px;
+   border: 1px solid var(--accent-border);
+   background: var(--accent-bg);
+   color: var(--accent);
+   cursor: pointer;
+}
+.copy:hover {
+   background: var(--accent);
+   color: #fff;
+}
+.code-pre {
+   flex: 1;
+   min-height: 0;
+   margin: 0;
+   overflow: auto;
+   padding: 12px 16px;
+   font-family: var(--mono);
+   font-size: 12px;
+   line-height: 1.55;
+   color: var(--text-h);
+   white-space: pre;
+   background: var(--code-bg);
+}
+.code-ta {
+   flex: 1;
+   min-height: 0;
+   resize: none;
+   border: none;
+   outline: none;
+   background: var(--code-bg);
+   color: var(--text-h);
+   font-family: var(--mono);
+   font-size: 12.5px;
+   line-height: 1.6;
+   padding: 12px 16px;
+   tab-size: 2;
+}
+
+/* ---- preset & source bars ---- */
+.preset-bar {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 6px;
+}
+.preset {
+   font: inherit;
+   font-size: 13px;
+   padding: 5px 12px;
+   border-radius: 999px;
+   border: 1px solid var(--border);
+   background: transparent;
+   color: var(--text-h);
+   cursor: pointer;
+}
+.preset:hover {
+   border-color: var(--accent-border);
+}
+.preset.is-active {
+   background: var(--accent-bg);
+   border-color: var(--accent);
+   color: var(--accent);
+   font-weight: 500;
+}
+.preset-bar--chips {
+   justify-content: flex-end;
+}
+.source-bar {
+   display: flex;
+   align-items: center;
+   gap: 6px;
+   flex-wrap: wrap;
+}
+.source-label {
+   font-size: 11px;
+   text-transform: uppercase;
+   letter-spacing: 0.06em;
+   color: var(--text);
+   margin-right: 2px;
+}
+.source,
+.vc-pick .vc-src {
+   font: inherit;
+   font-size: 13px;
+   padding: 4px 10px;
+   border-radius: 6px;
+   border: 1px solid var(--border);
+   background: transparent;
+   color: var(--text-h);
+   cursor: pointer;
+}
+.source.is-active {
+   border-color: var(--accent);
+   color: var(--accent);
+   background: var(--accent-bg);
+}
+
+/* ===================================================================
+   VARIANT A — Split studio (three always-on panes)
+   =================================================================== */
+.va {
+   background: var(--bg);
+}
+.va-top {
+   display: flex;
+   align-items: center;
+   gap: 14px;
+   padding: 12px 16px;
+   border-bottom: 1px solid var(--border);
+}
+.va-top .tag {
+   flex: 1;
+}
+.va-main {
+   flex: 1;
+   min-height: 0;
+   display: grid;
+   grid-template-columns: 300px minmax(0, 1fr) 420px;
+}
+.va-nav {
+   border-right: 1px solid var(--border);
+   overflow-y: auto;
+   padding: 12px;
+}
+.va-nav .source-bar {
+   margin-bottom: 10px;
+}
+.va-preview {
+   display: flex;
+   flex-direction: column;
+   padding: 16px;
+   gap: 10px;
+   overflow: hidden;
+}
+.stage-canvas {
+   background: var(--code-bg);
+   border: 1px solid var(--border);
+   border-radius: 10px;
+   padding: 12px;
+}
+.stage-canvas > div {
+   width: 100%;
+}
+.stage-label {
+   font-size: 12px;
+   color: var(--text);
+}
+.stage-tip {
+   font-size: 12px;
+   color: var(--text);
+   opacity: 0.8;
+   margin-top: auto;
+}
+.va-out {
+   border-left: 1px solid var(--border);
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+}
+.va-out .code-panel {
+   flex: 1;
+}
+
+/* ===================================================================
+   VARIANT B — Stage (preview-first, floating chrome)
+   =================================================================== */
+.vb {
+   background: radial-gradient(1200px 600px at 50% -10%, #23222e, #101018 70%);
+   color: #e8e6f0;
+}
+.vb h1,
+.vb .vb-hint {
+   color: #e8e6f0;
+}
+.vb h1 b {
+   color: #ffd166;
+}
+.vb-top {
+   display: flex;
+   align-items: center;
+   gap: 14px;
+   padding: 12px 20px;
+}
+.vb-hint {
+   font-size: 13px;
+   opacity: 0.7;
+}
+.vb-stage {
+   flex: 1;
+   min-height: 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 8px 24px 100px;
+}
+.vb-stagebar {
+   margin-bottom: 18px;
+}
+.vb-stagebar .preset {
+   border-color: rgba(255, 255, 255, 0.25);
+   color: #e8e6f0;
+}
+.vb-stagebar .preset.is-active {
+   background: rgba(255, 209, 102, 0.18);
+   border-color: #ffd166;
+   color: #ffd166;
+}
+.vb-canvas {
+   width: min(900px, 94%);
+}
+.vb-canvas .source-bar {
+   justify-content: center;
+   margin-bottom: 12px;
+}
+.vb-canvas .source {
+   color: #cdc9db;
+   border-color: rgba(255, 255, 255, 0.25);
+}
+.vb-canvas .source.is-active {
+   color: #ffd166;
+   border-color: #ffd166;
+   background: rgba(255, 209, 102, 0.12);
+}
+.vb-waves {
+   background: rgba(255, 255, 255, 0.06);
+   border: 1px solid rgba(255, 255, 255, 0.14);
+   border-radius: 16px;
+   padding: 22px;
+   box-shadow: var(--shadow);
+}
+/* floating glass knob bar */
+.vb-knobs {
+   position: fixed;
+   left: 50%;
+   bottom: 18px;
+   transform: translateX(-50%);
+   z-index: 20;
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   padding: 8px 10px;
+   border-radius: 999px;
+   background: rgba(24, 23, 33, 0.9);
+   border: 1px solid rgba(255, 255, 255, 0.18);
+   backdrop-filter: blur(10px);
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+   flex-wrap: wrap;
+   justify-content: center;
+   max-width: 92vw;
+}
+.minirow {
+   display: flex;
+   align-items: center;
+   gap: 6px;
+   padding: 0 6px;
+}
+.minirow .frow {
+   padding: 2px 0;
+   background: none;
+}
+.minirow .frow:hover {
+   background: none;
+}
+.minirow .fname,
+.minirow em {
+   display: none;
+}
+.minirow-label {
+   font-size: 11px;
+   text-transform: uppercase;
+   letter-spacing: 0.05em;
+   color: #9c97b0;
+   margin-right: 2px;
+}
+.minirow input[type='range'] {
+   width: 120px;
+}
+.knob-btn {
+   font: inherit;
+   font-size: 12px;
+   color: #e8e6f0;
+   background: rgba(255, 255, 255, 0.08);
+   border: 1px solid rgba(255, 255, 255, 0.2);
+   border-radius: 999px;
+   padding: 7px 12px;
+   cursor: pointer;
+   white-space: nowrap;
+}
+.knob-btn:hover {
+   background: rgba(255, 255, 255, 0.16);
+}
+/* drawer */
+.vb-drawer {
+   position: fixed;
+   inset: 0;
+   background: rgba(0, 0, 0, 0.5);
+   z-index: 30;
+   display: flex;
+   justify-content: flex-end;
+}
+.vb-sheet {
+   width: 400px;
+   height: 100%;
+   background: var(--bg);
+   color: var(--text-h);
+   padding: 16px;
+   box-shadow: -12px 0 40px rgba(0, 0, 0, 0.4);
+   overflow-y: auto;
+   position: relative;
+}
+.vb-sheet h3 {
+   margin: 0 0 8px;
+}
+.vb-sheet .code-panel {
+   height: 60vh;
+}
+.vb-close {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   border: none;
+   background: none;
+   font-size: 16px;
+   cursor: pointer;
+   color: var(--text);
+}
+
+/* ===================================================================
+   VARIANT C — Guide (linear wizard + persistent preview strip)
+   =================================================================== */
+.vc {
+   max-width: 1000px;
+   margin: 0 auto;
+   width: 100%;
+}
+.vc-top {
+   display: flex;
+   align-items: center;
+   gap: 20px;
+   padding: 12px 16px;
+   border-bottom: 1px solid var(--border);
+}
+.vc-stepper {
+   display: flex;
+   gap: 4px;
+   margin-left: auto;
+}
+.step {
+   font: inherit;
+   font-size: 13px;
+   color: var(--text);
+   background: none;
+   border: none;
+   border-radius: 8px;
+   padding: 6px 10px;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   gap: 6px;
+   opacity: 0.7;
+}
+.step .dot {
+   width: 18px;
+   height: 18px;
+   border-radius: 50%;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 11px;
+   background: var(--code-bg);
+   color: var(--text-h);
+}
+.step.is-on {
+   opacity: 1;
+   color: var(--accent);
+   font-weight: 500;
+}
+.step.is-on .dot {
+   background: var(--accent);
+   color: #fff;
+}
+.step.is-done .dot {
+   background: var(--accent-bg);
+   color: var(--accent);
+}
+.vc-body {
+   flex: 1;
+   min-height: 0;
+   overflow-y: auto;
+   padding: 24px 16px 16px;
+}
+.vc-pick > h2 {
+   margin-bottom: 6px;
+}
+.vc-pick > p {
+   color: var(--text);
+   margin-bottom: 18px;
+   max-width: 60ch;
+}
+.vc-pick .form {
+   margin-top: 8px;
+   border: 1px solid var(--border);
+   border-radius: 10px;
+}
+.card-row {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+   gap: 14px;
+   margin-top: 8px;
+}
+.pickcard {
+   font: inherit;
+   text-align: left;
+   display: flex;
+   flex-direction: column;
+   gap: 6px;
+   padding: 18px;
+   border-radius: 12px;
+   border: 1px solid var(--border);
+   background: transparent;
+   color: var(--text-h);
+   cursor: pointer;
+}
+.pickcard:hover {
+   border-color: var(--accent-border);
+}
+.pickcard.is-on {
+   border-color: var(--accent);
+   background: var(--accent-bg);
+}
+.pick-emblem {
+   font-size: 26px;
+}
+.pick-name {
+   font-weight: 600;
+   font-size: 15px;
+}
+.pick-url {
+   font-family: var(--mono);
+   font-size: 11px;
+   color: var(--text);
+}
+.preset-row {
+   margin-bottom: 12px;
+}
+.preset-row .preset-bar {
+   justify-content: flex-start;
+}
+.vc-copy .code-panel {
+   height: 340px;
+   border: 1px solid var(--border);
+   border-radius: 10px;
+   overflow: hidden;
+}
+/* persistent strip */
+.vc-strip {
+   background: var(--code-bg);
+   border-top: 1px solid var(--border);
+   padding: 10px 16px;
+}
+.strip-label {
+   display: block;
+   font-size: 11px;
+   color: var(--text);
+   margin-bottom: 6px;
+}
+.strip-wave {
+   background: var(--bg);
+   border: 1px solid var(--border);
+   border-radius: 8px;
+   padding: 8px;
+}
+.vc-foot {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 12px 16px;
+   border-top: 1px solid var(--border);
+   gap: 12px;
+}
+.vc-foot button {
+   font: inherit;
+   font-size: 14px;
+   padding: 8px 18px;
+   border-radius: 8px;
+   border: 1px solid var(--border);
+   background: transparent;
+   color: var(--text-h);
+   cursor: pointer;
+}
+.vc-foot button:disabled {
+   opacity: 0.4;
+   cursor: default;
+}
+.vc-foot button.primary {
+   background: var(--accent);
+   color: #fff;
+   border-color: var(--accent);
+}
+.vc-count {
+   font-size: 12px;
+   color: var(--text);
+}
+
+/* ===================================================================
+   VARIANT D — Spec sheet (continuous audit + sticky right rail)
+   =================================================================== */
+.vd-top {
+   display: flex;
+   align-items: center;
+   gap: 16px;
+   flex-wrap: wrap;
+   padding: 12px 20px;
+   border-bottom: 1px solid var(--border);
+}
+.vd-rule {
+   font-size: 13px;
+   color: var(--text);
+   opacity: 0.85;
+}
+.vd-top .preset-bar {
+   margin-left: auto;
+}
+.vd-toolbar {
+   padding: 8px 20px;
+   border-bottom: 1px solid var(--border);
+}
+.vd-main {
+   flex: 1;
+   min-height: 0;
+   display: grid;
+   grid-template-columns: minmax(0, 1fr) 460px;
+}
+.vd-doc {
+   overflow-y: auto;
+   padding: 10px 20px 30px;
+   border-right: 1px solid var(--border);
+}
+.vd-doc .form-section {
+   border: 1px solid var(--border);
+   border-radius: 8px;
+   margin: 10px 0;
+}
+.vd-doc .form-h h3 {
+   border-bottom: 1px solid var(--border);
+   background: var(--code-bg);
+}
+.vd-aside {
+   overflow-y: auto;
+   padding: 12px;
+   display: flex;
+   flex-direction: column;
+   gap: 14px;
+}
+.vd-card {
+   border: 1px solid var(--border);
+   border-radius: 10px;
+   overflow: hidden;
+}
+.vd-card .card-title {
+   font-size: 11px;
+   text-transform: uppercase;
+   letter-spacing: 0.06em;
+   color: var(--text);
+   padding: 8px 12px;
+   background: var(--code-bg);
+   border-bottom: 1px solid var(--border);
+}
+.vd-card:nth-child(1) {
+   padding: 10px;
+}
+.vd-card:nth-child(1) .card-title {
+   margin: -10px -10px 10px;
+   padding: 8px 12px;
+}
+.vd-card .code-panel {
+   height: 300px;
+}
+.vd-card .code-pre {
+   border-radius: 0 0 10px 10px;
+}
+
+/* ===================================================================
+   VARIANT E — Code-first (editable literal + live canvas)
+   =================================================================== */
+.ve-top {
+   display: flex;
+   align-items: center;
+   gap: 14px;
+   padding: 12px 16px;
+   border-bottom: 1px solid var(--border);
+}
+.ve-top .tag {
+   flex: 1;
+}
+.ve-main {
+   flex: 1;
+   min-height: 0;
+   display: grid;
+   grid-template-columns: minmax(0, 1fr) 46%;
+}
+.ve-code {
+   border-right: 1px solid var(--border);
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+}
+.ve-editor {
+   flex: 1;
+   min-height: 0;
+   display: flex;
+}
+.ve-editor .code-panel {
+   width: 100%;
+}
+.ve-form {
+   border-top: 1px solid var(--border);
+   max-height: 42%;
+   overflow-y: auto;
+}
+.ve-form summary {
+   cursor: pointer;
+   font-size: 13px;
+   color: var(--accent);
+   padding: 10px 16px;
+   list-style: none;
+}
+.ve-form summary::-webkit-details-marker {
+   display: none;
+}
+.ve-side {
+   display: flex;
+   flex-direction: column;
+   padding: 16px;
+   gap: 12px;
+   overflow: hidden;
+}
+.ve-source {
+   display: flex;
+   gap: 8px;
+}
+.ve-src {
+   font: inherit;
+   font-size: 13px;
+   padding: 6px 14px;
+   border-radius: 999px;
+   border: 1px solid var(--border);
+   background: transparent;
+   color: var(--text-h);
+   cursor: pointer;
+}
+.ve-src.is-on {
+   background: var(--accent);
+   color: #fff;
+   border-color: var(--accent);
+}
+.ve-canvas {
+   background: var(--code-bg);
+   border: 1px solid var(--border);
+   border-radius: 12px;
+   padding: 14px;
+}
+.ve-tip {
+   font-size: 12px;
+   color: var(--text);
+   margin-top: auto;
+   opacity: 0.8;
+}
+
+/* ===================================================================
+   Floating variant switcher (dev only)
+   =================================================================== */
+.proto-switch {
+   position: fixed;
+   bottom: 16px;
+   right: 16px;
+   z-index: 999;
+   display: flex;
+   align-items: center;
+   gap: 4px;
+   padding: 4px;
+   border-radius: 999px;
+   background: #17161d;
+   border: 1px solid rgba(255, 255, 255, 0.25);
+   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+   color: #fff;
+}
+.proto-switch .arr {
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   border: none;
+   background: rgba(255, 255, 255, 0.1);
+   color: #fff;
+   font-size: 15px;
+   cursor: pointer;
+}
+.proto-switch .arr:hover {
+   background: var(--accent);
+}
+.proto-switch .vlabel {
+   font-size: 12px;
+   padding: 0 8px;
+   white-space: nowrap;
+   color: #cfcbe0;
+}
+.proto-switch .vlabel b {
+   color: #fff;
+}
